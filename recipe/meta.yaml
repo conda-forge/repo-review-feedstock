@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - repo-review = repo_review.__main__:main
 
@@ -49,6 +49,8 @@ test:
     - validate-pyproject -E repo-review --help
     # Remove tests that depends upon sp-repo-review
     - rm tests/test_self.py && pytest
+  downstreams:
+    - sp-repo-review
 
 about:
   home: https://github.com/scientific-python/repo-review
