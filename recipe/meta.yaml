@@ -41,7 +41,7 @@ test:
     - rich-click
     - pip
     - pytest
-    # - sp-repo-review
+    - sp-repo-review
     - validate-pyproject >=0.14
   commands:
     - pip check
