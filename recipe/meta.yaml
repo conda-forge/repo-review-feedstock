@@ -35,20 +35,29 @@ test:
     - repo_review.fixtures
     - repo_review.schema
   source_files:
+    - docs
     - tests
+    - README.md
+    - LICENSE
+    - noxfile.py
     - pyproject.toml
+    - .github
+    - .pre-commit-config.yaml
+    - .readthedocs.yaml
   requires:
     - rich-click
     - pip
     - pytest
-    # - sp-repo-review
+    - sp-repo-review
     - validate-pyproject >=0.14
   commands:
     - pip check
     - repo-review --help
     - validate-pyproject -E repo-review --help
-    # Remove tests that depends upon sp-repo-review
-    - rm tests/test_self.py && pytest
+    - mkdir src
+    - pytest -k "not test_cmd_dual"
+  downstreams:
+    - sp-repo-review
 
 about:
   home: https://github.com/scientific-python/repo-review
