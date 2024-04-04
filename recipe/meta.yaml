@@ -35,8 +35,15 @@ test:
     - repo_review.fixtures
     - repo_review.schema
   source_files:
+    - docs
     - tests
+    - README.md
+    - LICENSE
+    - noxfile.py
     - pyproject.toml
+    - .github
+    - .pre-commit-config.yaml
+    - .readthedocs.yaml
   requires:
     - rich-click
     - pip
@@ -47,8 +54,7 @@ test:
     - pip check
     - repo-review --help
     - validate-pyproject -E repo-review --help
-    # Remove tests that depends upon sp-repo-review
-    - rm tests/test_self.py && pytest
+    - pytest
   downstreams:
     - sp-repo-review
 
@@ -69,4 +75,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - henryiii
     - MementoRC
