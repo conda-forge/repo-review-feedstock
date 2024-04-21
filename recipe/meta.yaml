@@ -22,12 +22,15 @@ requirements:
     - hatch-vcs
     - python >=3.8
     - pip
-    - tomli
-    - typing-extensions
   run:
+    - click
     - markdown-it-py
     - python >=3.8
     - pyyaml
+    - rich
+    - rich-click
+    - tomli
+    - typing-extensions
 
 test:
   imports:
@@ -45,7 +48,6 @@ test:
     - .pre-commit-config.yaml
     - .readthedocs.yaml
   requires:
-    - rich-click
     - pip
     - pytest
     - sp-repo-review
