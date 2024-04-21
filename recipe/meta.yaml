@@ -1,5 +1,5 @@
 {% set name = "repo-review" %}
-{% set version = "0.10.4" %}
+{% set version = "0.10.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/scientific-python/repo-review/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3fbf5ce1d803a47f89d7ef20d5781ef742985d2f0cd86a1a9731413508a6c89c
+  sha256: 2103b12d956813022deb49211017d2953d4fb06f60c7bd1cc978ec961fd7f12a
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
   entry_points:
     - repo-review = repo_review.__main__:main
 
