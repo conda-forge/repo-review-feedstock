@@ -1,5 +1,5 @@
 {% set name = "repo-review" %}
-{% set version = "0.10.4" %}
+{% set version = "0.10.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/scientific-python/repo-review/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3fbf5ce1d803a47f89d7ef20d5781ef742985d2f0cd86a1a9731413508a6c89c
+  sha256: 0e29969b708bbe0028132d5d5a4bdf96741a7e85b48c961a124b964c3c11ca72
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
   entry_points:
     - repo-review = repo_review.__main__:main
 
@@ -20,14 +20,17 @@ requirements:
   host:
     - hatchling
     - hatch-vcs
-    - python >=3.8
+    - python >=3.10
     - pip
+  run:
+    - click
+    - markdown-it-py
+    - python >=3.10
+    - pyyaml
+    - rich
+    - rich-click
     - tomli
     - typing-extensions
-  run:
-    - markdown-it-py
-    - python >=3.8
-    - pyyaml
 
 test:
   imports:
@@ -45,7 +48,6 @@ test:
     - .pre-commit-config.yaml
     - .readthedocs.yaml
   requires:
-    - rich-click
     - pip
     - pytest
     - sp-repo-review
@@ -55,7 +57,8 @@ test:
     - repo-review --help
     - validate-pyproject -E repo-review --help
     - mkdir src
-    - pytest -k "not test_cmd_dual"
+    - ls
+    - pytest -ra
   downstreams:
     - sp-repo-review
 
