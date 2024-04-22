@@ -57,7 +57,7 @@ test:
     - repo-review --help
     - validate-pyproject -E repo-review --help
     - mkdir src
-    - pytest -k "not test_cmd_dual"
+    - pytest
   downstreams:
     - sp-repo-review
 
