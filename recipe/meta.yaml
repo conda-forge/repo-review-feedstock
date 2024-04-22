@@ -20,12 +20,12 @@ requirements:
   host:
     - hatchling
     - hatch-vcs
-    - python >=3.8
+    - python >=3.10
     - pip
   run:
     - click
     - markdown-it-py
-    - python >=3.8
+    - python >=3.10
     - pyyaml
     - rich
     - rich-click
