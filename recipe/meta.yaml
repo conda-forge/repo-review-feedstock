@@ -42,7 +42,6 @@ test:
     - tests
     - README.md
     - LICENSE
-    - noxfile.py
     - pyproject.toml
     - .github
     - .pre-commit-config.yaml
