@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "repo-review" %}
 {% set version = "0.11.3" %}
 
@@ -12,7 +13,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - repo-review = repo_review.__main__:main
 
@@ -20,12 +21,12 @@ requirements:
   host:
     - hatchling
     - hatch-vcs
-    - python >=3.10
+    - python {{ python_min }}
     - pip
   run:
     - click
     - markdown-it-py
-    - python >=3.10
+    - python >={{ python_min }}
     - pyyaml
     - rich
     - rich-click
@@ -51,6 +52,7 @@ test:
     - pytest
     - sp-repo-review
     - validate-pyproject >=0.14
+    - python {{ python_min }}
   commands:
     - pip check
     - repo-review --help
