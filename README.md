@@ -19,7 +19,6 @@ rule is followed, red x’s mean the rule is not. A yellow warning sign means th
 was skipped because a previous required check failed. Four output formats are supported;
 rich, svg, html, and json.
 
-
 Current build status
 ====================
 
