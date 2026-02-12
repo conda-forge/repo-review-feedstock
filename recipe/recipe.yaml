@@ -12,7 +12,7 @@ source:
   sha256: 529d5a0bd60c3c2de81f7be2d9ae8cc442277abc7d763a92d5bef90c596248c2
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python -m pip install . -v
   python:
@@ -59,7 +59,7 @@ tests:
         - pytest
         - sp-repo-review
         - validate-pyproject >=0.14
-        - python ==${{ python_min }}.*
+        - python ${{ python_min }}.*
     script:
       - repo-review --help
       - validate-pyproject -E repo-review --help
