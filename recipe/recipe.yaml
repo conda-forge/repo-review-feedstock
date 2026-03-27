@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/scientific-python/repo-review/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 529d5a0bd60c3c2de81f7be2d9ae8cc442277abc7d763a92d5bef90c596248c2
+  sha256: 018f0150d41adb266c1c0a4966e9a2234fb15e3d7810175520398bdae95903ef
 
 build:
   number: 0
