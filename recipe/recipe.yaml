@@ -56,7 +56,7 @@ tests:
       run:
         - pip
         - pytest
-        - sp-repo-review==2025.11.04
+        - sp-repo-review==2025.11.07
         - validate-pyproject >=0.14
         - python ${{ python_min }}.*
     script:
