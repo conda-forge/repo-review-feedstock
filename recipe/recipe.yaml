@@ -1,7 +1,7 @@
 context:
   python_min: "3.10"
   name: repo-review
-  version: "1.0.1"
+  version: "1.0.2"
 
 package:
   name: ${{ name|lower }}
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/scientific-python/repo-review/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 8e209f0829ac1fc8a24fdb817ca91bd14e3b854c41a809aa2b583c4f7478d806
+  sha256: 42291afad2e8512fe0eda5439e10548730cb74bf6787442c7726fbd39e619e83
 
 build:
   number: 0
