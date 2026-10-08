@@ -41,6 +41,9 @@ tests:
         - repo_review.schema
         - repo_review.files
       pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - downstream: sp-repo-review
   - files:
       source:
@@ -50,6 +53,7 @@ tests:
         - LICENSE
         - pyproject.toml
         - .github
+        - .gitignore
         - .pre-commit-config.yaml
         - .readthedocs.yaml
     requirements:
