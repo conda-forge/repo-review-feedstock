@@ -50,31 +50,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `repo-review` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install repo-review
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install repo-review
 ```
 
-It is possible to list all of the versions of `repo-review` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add repo-review
+# for installing globally
+pixi global install repo-review
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `repo-review` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search repo-review --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search repo-review --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search repo-review --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -86,6 +128,8 @@ mamba repoquery whoneeds repo-review --channel conda-forge
 # List dependencies of `repo-review`:
 mamba repoquery depends repo-review --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge

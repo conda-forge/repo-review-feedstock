@@ -1,7 +1,7 @@
 context:
   python_min: "3.10"
   name: repo-review
-  version: "1.2.1"
+  version: "1.2.2"
 
 package:
   name: ${{ name|lower }}
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/scientific-python/repo-review/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: b090e9af584201ed3946673fbdac070a18905e69e73d193c651329e93fc31450
+  sha256: 66be41b1572f616a23a0416d7151b468844646d5a740df41ebf73669f1302710
 
 build:
   number: 0
@@ -41,6 +41,9 @@ tests:
         - repo_review.schema
         - repo_review.files
       pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - downstream: sp-repo-review
   - files:
       source:
@@ -50,6 +53,7 @@ tests:
         - LICENSE
         - pyproject.toml
         - .github
+        - .gitignore
         - .pre-commit-config.yaml
         - .readthedocs.yaml
     requirements:
