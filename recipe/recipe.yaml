@@ -1,5 +1,4 @@
 context:
-  python_min: "3.11"
   name: repo-review
   version: "1.3.0"
 
@@ -42,7 +41,6 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
-  - downstream: sp-repo-review
   - files:
       source:
         - docs
